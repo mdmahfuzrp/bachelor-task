@@ -90,3 +90,7 @@ html {
   ) {
   border: 1px solid #666;
 }
+
+.ant-skeleton-header {
+  display: none !important;
+}

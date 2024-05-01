@@ -1,35 +1,53 @@
+"use client";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import React from "react";
-import ProjectAction from "@/components/ProjectAction";
+import { useQuery } from "react-query";
+import { PRIVATE_ENDPOINT } from "@/endpoints/Private";
+import axios from "axios";
+import SkeletonWithAntd from "@/utils/SkeletonWithAntd";
+import SingleProject from "@/components/SingleProject";
+import NoDataFound from "@/utils/NoDataFound";
+
+const helper = () => {
+  return axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/${PRIVATE_ENDPOINT.projects.get_all_projects}`
+  );
+};
 
 const Projects = () => {
+  const {
+    isLoading,
+    isError,
+    data: projectList,
+    error,
+    refetch,
+  } = useQuery("all-projects", helper);
+  console.log(projectList);
   return (
     <DashboardLayout>
-      <div>
-        <h1 className="text-[18px] py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
-          Team Projects
-        </h1>
+      {isLoading ? (
+        <SkeletonWithAntd rows={6} />
+      ) : isError ? (
+        "Something wen't wrong"
+      ) : projectList?.data?.length > 0 ? (
+        <div>
+          <h1 className="text-[18px] py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
+            Team Projects
+          </h1>
 
-        <div className="grid grid-cols-3 gap-4">
-          <div className=" w-fit shadow-lg bg-special p-3 flex gap-2 rounded-md border-2 border-black">
-            <div className="h-full">
-              <div className="bg-white border rounded-md border-black py-2 px-3">
-                <p className="text-base  leading-5 text-primary font-medium">
-                  Here is my title
-                </p>
-                <span className="text-[13px] leading-4 mt-1 block text-primary opacity-80 font-normal">
-                  Here is my description and it's really amazing to see this
-                </span>
-              </div>
-              <div className="bg-c_danger mt-2 p-1 flex items-center gap-2 justify-center text-[14px] font-normal text-white rounded-md border border-black">
-                <strong className="text-white font-medium">Deadline:</strong>
-                <span className="text-white font-medium">2-24-2024</span>
-              </div>
-            </div>
-            <ProjectAction />
+          <div className="grid grid-cols-3 gap-4">
+            {projectList?.data?.map((project) => (
+              <SingleProject
+                refetch={refetch}
+                project={project}
+                key={project?.id}
+              />
+            ))}
           </div>
         </div>
-      </div>
+      ) : (
+        <NoDataFound />
+      )}
     </DashboardLayout>
   );
 };

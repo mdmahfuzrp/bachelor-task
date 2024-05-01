@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GrView } from "react-icons/gr";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Button, Popconfirm } from "antd";
 import ProjectEdit from "./ProjectEdit";
 import Link from "next/link";
+import { deleteHelper } from "@/deleteHelper";
+import { PRIVATE_ENDPOINT } from "@/endpoints/Private";
 
-const ProjectAction = () => {
+const ProjectAction = ({ project, refetch }) => {
+  const { deleteMutation } = deleteHelper();
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const showPopconfirm = () => {
@@ -15,25 +18,31 @@ const ProjectAction = () => {
   };
   const handleOk = () => {
     setConfirmLoading(true);
-    setTimeout(() => {
-      setOpen(false);
-      setConfirmLoading(false);
-    }, 2000);
+    const endpoint = `${process.env.NEXT_PUBLIC_BASE_URL}${PRIVATE_ENDPOINT.projects.get_all_projects}/${project?.id}`;
+    deleteMutation.mutate(endpoint);
   };
   const handleCancel = () => {
     console.log("Clicked cancel button");
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (deleteMutation?.isSuccess) {
+      setConfirmLoading(false);
+      setOpen(false);
+      refetch();
+    }
+  }, [deleteMutation?.isSuccess]);
   return (
     <div className="flex flex-col h-full justify-between gap-1">
       <Link
-        href={"/projects/2"}
+        href={`/projects/${project?.id}`}
         className="bg-white border py-1 px-[6px] hover:bg-special cursor-pointer duration-150 shadow-md rounded-[5px] flex items-center justify-center gap-[2px] border-black"
       >
         <GrView size={14} />{" "}
         <span className="text-[13px] font-medium text-black">View</span>
       </Link>
-      <ProjectEdit />
+      <ProjectEdit project={project} refetch={refetch} />
 
       <Popconfirm
         title="Title"

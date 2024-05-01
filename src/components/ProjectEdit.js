@@ -1,22 +1,47 @@
 import MyModal from "@/utils/MyModal";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import EditProject from "./ModalsCompo/EditProject";
+import { useMutation } from "react-query";
+import { updateHelper } from "@/updateHelper";
+import { PRIVATE_ENDPOINT } from "@/endpoints/Private";
 
-const ProjectEdit = () => {
+const ProjectEdit = ({ project, refetch }) => {
+  // react query mutation
+  const { mutate, isLoading, isError } = useMutation(updateHelper);
+
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const showModal = () => {
     setOpen(true);
   };
 
+  // local states
+  const [title, setTitle] = useState(project?.title);
+  const [description, setDescription] = useState(project?.description);
+
   const handleOk = () => {
     setLoading(true);
-    setTimeout(() => {
+    const myData = {
+      title: title,
+      description: description,
+    };
+
+    const endpoint = `${process.env.NEXT_PUBLIC_BASE_URL}${PRIVATE_ENDPOINT.projects.get_all_projects}/${project?.id}`;
+
+    mutate({
+      endpoint: endpoint,
+      data: myData,
+    });
+  };
+
+  useEffect(() => {
+    if (!isLoading) {
       setLoading(false);
       setOpen(false);
-    }, 3000);
-  };
+      refetch();
+    }
+  }, [isLoading]);
 
   return (
     <>
@@ -29,7 +54,14 @@ const ProjectEdit = () => {
       </div>
 
       <MyModal
-        content={<EditProject />}
+        content={
+          <EditProject
+            setTitle={setTitle}
+            setDescription={setDescription}
+            title={title}
+            description={description}
+          />
+        }
         handleOk={handleOk}
         loading={loading}
         setOpen={setOpen}
