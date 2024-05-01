@@ -5,6 +5,10 @@
 * {
   color: #1c2120;
 }
+body,
+html {
+  background-color: #a5d8ff;
+}
 .special-font {
   font-family: "Rowdies", sans-serif !important;
 }
@@ -41,8 +45,6 @@
 .inner-shadow {
   box-shadow: inset 0 0 15px 0 rgba(52, 60, 66, 0.25);
 }
-   
-
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -50,14 +52,41 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #e9e3ff;
+  background-color: transparent;
+  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #cbbefa;
+  background-color: #73b9ee;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #6640f3;
+  background-color: #4a98d4;
+}
+
+.anticon.anticon-exclamation-circle svg {
+  fill: #fa5252;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-btn-primary {
+  background: #fa5252;
+  color: white !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-btn-primary span {
+  color: white !important;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-btn-primary:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  background: #fa5252;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-btn-default:not(:disabled):not(
+    .ant-btn-disabled
+  ):hover {
+  border: 1px solid #666;
+}
+:where(.css-dev-only-do-not-override-kghr11).ant-btn-default:not(:disabled):not(
+    .ant-btn-disabled
+  ) {
+  border: 1px solid #666;
 }

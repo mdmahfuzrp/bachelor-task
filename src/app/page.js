@@ -96,8 +96,8 @@ const SignIn = () => {
   return (
     <>
       {contextHolder}
-      <div className="container !pt-[20px] !pb-[50px]">
-        <div className="border rounded-t-full mx-auto lg:w-10/12">
+      <div className="container !pt-[30px] !pb-[50px]">
+        <div className="border bg-white rounded-t-full mx-auto lg:w-10/12">
           <img
             src="/logo.png"
             alt="bachelor-task"

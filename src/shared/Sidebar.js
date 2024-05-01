@@ -13,7 +13,7 @@ const Sidebar = () => {
           href={data?.url}
           className={`py-[10px] flex gap-[6px] items-center px-[15px] rounded-lg duration-150 hover:bg-white border-2 border-black ${
             pathname === data?.url && "bg-white"
-          }`}
+          } ${pathname?.includes(data?.url) ? "bg-white" : ""}`}
         >
           <span className="">{data?.icon}</span>
           {data?.name}
