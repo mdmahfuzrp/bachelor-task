@@ -16,6 +16,7 @@ module.exports = {
         special_hover: "#a5d8ff",
         light50: "#f1f2fa",
         light100: "#dee0f2",
+        c_danger: "#fa5252",
       },
       borderColor: {
         primary: "#9993",

@@ -8,11 +8,19 @@ const SingleProject = ({ project, refetch }) => {
       <div className="h-full">
         <div className="bg-white border rounded-md border-black py-2 px-3">
           <p className="text-base  leading-5 text-primary font-medium">
-            {project?.title ? project?.title?.slice(0, 15) : <NotAvailable />}
+            {project?.title ? (
+              `${project?.title?.slice(0, 15)}${
+                project?.title?.length > 15 ? "..." : ""
+              }`
+            ) : (
+              <NotAvailable />
+            )}
           </p>
           <span className="text-[13px] leading-4 mt-1 block text-primary opacity-80 font-normal">
             {project?.description ? (
-              `${project?.description?.slice(0, 35)}...`
+              `${project?.description?.slice(0, 35)}${
+                project?.description?.length > 35 ? "..." : ""
+              }`
             ) : (
               <NotAvailable />
             )}
