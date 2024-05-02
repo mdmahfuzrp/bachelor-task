@@ -69,8 +69,8 @@ export default function Task({ id, title, description, status }) {
       setTimeout(() => {
         setLoading(false);
         setOpen(false);
-
         updateTask(id, editedTask?.status);
+        messageApi.success("Successfully task updated.");
       }, 1000);
     } else {
       setOpen(false);

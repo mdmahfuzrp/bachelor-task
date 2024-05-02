@@ -38,6 +38,7 @@ const AddNewTask = () => {
       setOpen(false);
 
       addTask(title, description);
+      messageApi.success("Successfully task added.");
     }, 1000);
   };
 

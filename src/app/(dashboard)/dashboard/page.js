@@ -34,7 +34,7 @@ const Dashboard = () => {
       ) : projectList?.data?.length > 0 ? (
         <div>
           <h1 className="text-[18px] uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
-            All projects
+            Projects overview
           </h1>
 
           <div className="grid grid-cols-3 gap-4">

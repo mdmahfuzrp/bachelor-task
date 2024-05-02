@@ -2,6 +2,7 @@ import { Button, Dropdown, Space, Avatar, Badge } from "antd";
 import React from "react";
 import { UserOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import DrawerForNav from "./DrawerForNav";
 
 const items = [
   {
@@ -46,8 +47,13 @@ const DashboardNav = () => {
   return (
     <div className="bg-white rounded-xl">
       <div className="w-full flex items-center justify-between border-2 px-5 pl-3 rounded-xl mb-3 border-black">
-        <Image src={"/logo.png"} width={200} height={200} />
-        <div className="flex items-center gap-6">
+        <Image
+          src={"/logo.png"}
+          className="w-[150px] lg:w-[200px]"
+          width={200}
+          height={200}
+        />
+        <div className="hidden lg:flex items-center gap-6">
           <button className="border rounded-full p-[2px]">
             <Badge count={100}>
               <Avatar icon={<UserOutlined />} />
@@ -76,6 +82,7 @@ const DashboardNav = () => {
             </Dropdown>
           </Space>
         </div>
+        <DrawerForNav />
       </div>
     </div>
   );

@@ -16,13 +16,13 @@ export const SidebarData = [
     icon: <IoFileTrayStackedOutline size={17} />,
   },
   {
-    name: "My Tasks",
-    url: "/my-tasks",
+    name: "Manage Tasks",
+    url: "/manage-tasks",
     icon: <HiOutlineClipboardDocumentList size={20} />,
   },
   {
-    name: "Contributors",
-    url: "/contributors",
+    name: "All Tasks",
+    url: "/all-tasks",
     icon: <TbUserHexagon size={19} />,
   },
   {
