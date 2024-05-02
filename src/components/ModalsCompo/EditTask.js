@@ -19,13 +19,8 @@ const EditTask = ({ setEditedTask, editedTask }) => {
           type="text"
           placeholder="Title"
           value={editedTask?.title}
-          onChange={(e) =>
-            setEditedTask({
-              ...editedTask,
-              title: e?.target?.value,
-            })
-          }
-          className=" text-primary outline-none mt-1 bg-white  py-[6px] px-3 rounded-[4px] border border-black"
+          readOnly
+          className=" text-primary outline-none mt-1 bg-slate-200  py-[6px] px-3 rounded-[4px] border border-black"
         />
       </div>
 
@@ -39,23 +34,19 @@ const EditTask = ({ setEditedTask, editedTask }) => {
           cols="30"
           rows="10"
           value={editedTask?.description}
-          onChange={(e) =>
-            setEditedTask({
-              ...editedTask,
-              description: e?.target?.value,
-            })
-          }
+          readOnly
           placeholder="Description"
-          className="bg-white outline-none text-primary min-h-[37px] max-h-[90px] mt-1  py-[6px] px-3 rounded-[4px] border border-black"
+          className="bg-slate-200 outline-none text-primary min-h-[37px] max-h-[90px] mt-1  py-[6px] px-3 rounded-[4px] border border-black"
         ></textarea>
       </div>
 
-      <div className="flex flex-col  col-span-full">
+      <div className="flex flex-col  col-span-full mt-3">
         <label htmlFor="Title" className="font-medium text-[14px] text-primary">
           Assign Team Member<span className="text-c_danger">*</span>
         </label>
         <div className="border border-black  mt-[2px] rounded-md">
           <Select
+            defaultValue={editedTask?.status}
             allowClear
             style={{
               width: "100%",

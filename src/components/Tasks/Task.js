@@ -70,12 +70,7 @@ export default function Task({ id, title, description, status }) {
         setLoading(false);
         setOpen(false);
 
-        updateTask(
-          id,
-          editedTask?.status,
-          editedTask?.title,
-          editedTask?.description
-        );
+        updateTask(id, editedTask?.status);
       }, 1000);
     } else {
       setOpen(false);
