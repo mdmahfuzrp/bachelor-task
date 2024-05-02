@@ -6,7 +6,7 @@ import ReactQueryClientProvider from "@/components/ReactQueryClientProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Bachelors Task: Manage Your Project",
+  title: "Bachelor Task: Manage Your Project",
   description: "Manage your complex project with this free task",
 };
 
