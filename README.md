@@ -1,37 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bachelor Task
 
-## Getting Started
+![GitHub last commit](https://img.shields.io/github/last-commit/mdmahfuzrp/bachelor-task)
+![GitHub repo size](https://img.shields.io/github/repo-size/mdmahfuzrp/bachelor-task)
+![GitHub](https://img.shields.io/github/license/mdmahfuzrp/bachelor-task)
 
-First, run the development server:
+Bachelor Task is a project management website built using React, Zustand, React Query, Ant Design, Next.js, and Tailwind CSS. It provides a platform for managing projects and tasks efficiently.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Live Demo [Live Demo](https://bachelor-task.vercel.app/)
+
+### Ui Design [Live Demo](https://excalidraw.com/#json=qIgvNWBrvef3pX9PLGNjs,aNEBuTJmD5mE4yUr5ts59Q)
+
+## Screenshots
+
+![Home Page](https://i.ibb.co/f0QCYHy/Screenshot-from-2024-05-02-09-26-36.png)
+![Dashboard](https://i.ibb.co/pZwWxtv/Screenshot-from-2024-05-02-09-25-53.png)
+
+## Features
+
+- **Login Page:** Users can login using the provided credentials.
+- **Dashboard:** Provides an overview of recent projects and an option to add new projects.
+- **Projects Page:** Displays all projects with options to delete, edit, and view project details.
+- **Project Details Page:** Users can view and manage tasks associated with a specific project.
+- **Task Management:** Task management functionality includes drag and drop, edit, delete, and view options.
+- **Task Filtering:** Users can search and filter tasks based on their status (todo, in progress, done) and project name.
+- **Mini Trello Board:** Users can manage tasks in a Trello-like interface.
+
+## Usage
+
+To run this project locally, follow these steps:
+
+### 1. Clone the repository:
+
+```
+git clone https://github.com/mdmahfuzrp/bachelor-task.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Navigate to the project directory:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+cd bachelor-task
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 3. Install dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Demo Credentials
 
-## Deploy on Vercel
+- **Email:** admin@gmail.com
+- **Password:** password
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# bachelors-task
+- React
+- Zustand
+- React Query
+- Ant Design
+- Next.js
+- Tailwind CSS
+
+## All right reserved by
+
+- [Md Mahfuz RP](https://www.linkedin.com/in/mdmahfuzrp)
