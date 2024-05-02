@@ -2,6 +2,7 @@
 import ErrorMessage from "@/utils/ErrorMessage";
 import LoadingSpinner from "@/utils/LoadingSpinner";
 import { message } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -98,11 +99,13 @@ const SignIn = () => {
       {contextHolder}
       <div className="container !pt-[30px] !pb-[50px]">
         <div className="border bg-white rounded-t-full mx-auto lg:w-10/12">
-          <img
-            src="/logo.png"
-            alt="bachelor-task"
-            className="max-w-[250px] mx-auto"
-          />
+          <Link href={"/dashboard"}>
+            <img
+              src="/logo.png"
+              alt="bachelor-task"
+              className="max-w-[250px] mx-auto"
+            />
+          </Link>
         </div>
         <div className="lg:w-10/12 relative pb-14 py-10 px-10 rounded-b-lg bg-light50 border  mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <form
