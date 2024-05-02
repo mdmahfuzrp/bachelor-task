@@ -8,6 +8,7 @@ import { SmileOutlined } from "@ant-design/icons";
 import { Dropdown, message } from "antd";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import EditTask from "../ModalsCompo/EditTask";
+import { FaRegEdit } from "react-icons/fa";
 
 const items = [
   {
@@ -26,7 +27,7 @@ const items = [
     label: (
       <div className="cursor-pointer  gap-1 w-full h-[22px] flex items-center justify-center rounded-[4px]">
         <span className="opacity-70">
-          <GrView size={14} />
+          <FaRegEdit size={14} />
         </span>
         Edit task
       </div>
