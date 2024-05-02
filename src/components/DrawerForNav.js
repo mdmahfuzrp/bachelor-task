@@ -22,7 +22,7 @@ const DrawerForNav = () => {
         <IoMenu size={22} />
       </button>
       <Drawer
-        title="Basic Drawer"
+        title="Bachelor Task"
         placement={placement}
         closable={false}
         onClose={onClose}

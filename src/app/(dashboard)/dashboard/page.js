@@ -37,7 +37,7 @@ const Dashboard = () => {
             Projects overview
           </h1>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {projectList?.data?.map((project) => (
               <SingleProject
                 refetch={refetch}

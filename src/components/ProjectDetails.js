@@ -4,7 +4,7 @@ import NotAvailable from "@/utils/NotAvailable";
 
 const ProjectDetails = ({ projectDetails }) => {
   return (
-    <div className="grid grid-cols-3 gap-4 border-2 pt-3 border-black bg-special py-2 pb-3 px-[14px] rounded-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 border-2 pt-3 border-black bg-special py-2 pb-3 px-[14px] rounded-md">
       <div className="">
         <p className="text-base bg-white px-2 rounded-[4px] border border-black py-1 leading-5 text-primary font-medium">
           {projectDetails?.title ? (

@@ -44,17 +44,17 @@ const ManageTasks = () => {
 
   return (
     <DashboardLayout>
-      <div className="text-[18px] flex items-center justify-between pb-[2px] uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
+      <div className="text-[18px] flex flex-col sm:flex-row items-center justify-between pb-[2px] uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
         Manage Tasks
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row items-center gap-2">
           <Input
             placeholder="Search title here..."
             allowClear
             onChange={handleSearch}
-            className="border border-black text-primary"
+            className="border w-full border-black text-primary"
           />
 
-          <div className="border border-black capitalize mt-[2px] rounded-md">
+          <div className="border w-full border-black capitalize mt-[2px] rounded-md">
             <Select
               allowClear
               style={{
@@ -68,7 +68,7 @@ const ManageTasks = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-start">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 items-start">
         {allTasks.map((task) => (
           <Task key={task.id} {...task} />
         ))}

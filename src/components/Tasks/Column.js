@@ -29,7 +29,7 @@ export default function Column({ title, status }) {
   }, []);
 
   return (
-    <section className="max-h-[70vh] h-full bg-white rounded-md flex-1 mt-[14px]">
+    <section className="max-h-[68.5vh] h-full bg-white rounded-md flex-1 mt-[14px]">
       <h2
         className={`${
           title === "Todo"
@@ -45,7 +45,7 @@ export default function Column({ title, status }) {
       </h2>
 
       <div
-        className={`h-full overflow-y-auto pt-3 max-h-[400px] min-h-[400px] w-full rounded-b-md border-2 border-black border-t-0 px-3 `}
+        className={`h-full pt-3 overflow-y-auto max-h-[400px] min-h-[400px] w-full rounded-b-md border-2 border-black border-t-0 px-3 `}
         onDrop={handleDrop}
         onDragOver={(e) => e.preventDefault()}
       >

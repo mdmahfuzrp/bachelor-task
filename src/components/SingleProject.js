@@ -4,10 +4,10 @@ import NotAvailable from "@/utils/NotAvailable";
 
 const SingleProject = ({ project, refetch }) => {
   return (
-    <div className=" w-fit shadow-lg bg-special p-3 flex gap-2 rounded-md border-2 border-black">
-      <div className="h-full">
+    <div className=" w-full shadow-lg bg-special p-3 flex flex-col sm:flex-row gap-2 justify-between rounded-md border-2 border-black">
+      <div className="h-full w-full">
         <div className="bg-white border rounded-md border-black py-2 px-3">
-          <p className="text-base  leading-5 text-primary font-medium">
+          <p className="text-base leading-5 text-primary font-medium">
             {project?.title ? (
               `${project?.title?.slice(0, 15)}${
                 project?.title?.length > 15 ? "..." : ""
@@ -27,7 +27,9 @@ const SingleProject = ({ project, refetch }) => {
           </span>
         </div>
         <div className="bg-c_danger mt-2 p-1 flex items-center gap-2 justify-center text-[14px] font-normal text-white rounded-md border border-black">
-          <strong className="text-white font-medium">Deadline:</strong>
+          <strong className="text-white font-medium hidden sm:flex">
+            Deadline:
+          </strong>
           <span className="text-white font-medium">
             {project?.deadline || <NotAvailable />}
           </span>

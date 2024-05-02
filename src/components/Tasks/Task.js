@@ -91,7 +91,7 @@ export default function Task({ id, title, description, status }) {
       {contextHolder}
       <div
         className={cn(
-          "flex cursor-move items-start justify-between rounded-[4px] px-3 py-2 ",
+          "flex cursor-move items-start justify-between gap-1 rounded-[4px] px-3 py-2 ",
           {
             "border border-black bg-c_danger": status === "TODO",
             "border border-black bg-c_yellow": status === "IN_PROGRESS",

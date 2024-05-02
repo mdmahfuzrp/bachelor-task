@@ -32,7 +32,7 @@ const Projects = () => {
         "Something wen't wrong"
       ) : projectList?.data?.length > 0 ? (
         <div>
-          <h1 className="text-[18px] flex items-center justify-between uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
+          <h1 className="sm:text-[18px] flex flex-col gap-1 sm:flex-row items-center justify-between uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
             All projects
             <Link
               href="/projects/add-project"
@@ -42,7 +42,7 @@ const Projects = () => {
             </Link>
           </h1>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {projectList?.data?.map((project) => (
               <SingleProject
                 refetch={refetch}

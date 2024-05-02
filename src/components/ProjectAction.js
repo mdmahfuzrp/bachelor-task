@@ -34,7 +34,7 @@ const ProjectAction = ({ project, refetch }) => {
     }
   }, [deleteMutation?.isSuccess]);
   return (
-    <div className="flex flex-col h-full justify-between gap-1">
+    <div className="flex flex-row flex-wrap sm:flex-col h-full sm:justify-between gap-1">
       <Link
         href={`/projects/${project?.id}`}
         className="bg-white border py-1 px-[6px] hover:bg-special cursor-pointer duration-150 shadow-md rounded-[5px] flex items-center justify-center gap-[2px] border-black"
