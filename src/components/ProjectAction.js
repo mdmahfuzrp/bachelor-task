@@ -36,7 +36,7 @@ const ProjectAction = ({ project, refetch }) => {
   return (
     <div className="flex flex-row flex-wrap sm:flex-col h-full sm:justify-between gap-1">
       <Link
-        href={`/projects/${project?.id}`}
+        href={`/users/projects/${project?.id}`}
         className="bg-white border py-1 px-[6px] hover:bg-special cursor-pointer duration-150 shadow-md rounded-[5px] flex items-center justify-center gap-[2px] border-black"
       >
         <GrView size={14} />{" "}
