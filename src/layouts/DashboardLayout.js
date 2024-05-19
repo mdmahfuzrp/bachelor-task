@@ -8,10 +8,10 @@ const DashboardLayout = ({ children }) => {
       <div className="container !py-10">
         <DashboardNav />
         <div className="border-2 border-black rounded-xl p-5 gap-4 grid grid-cols-8">
-          <div className="hidden lg:flex col-span-2 p-5 border-black border-2 rounded-xl overflow-y-auto max-h-[70vh]">
+          <div className="hidden lg:flex col-span-2 p-5 border-black border-2 rounded-xl overflow-y-auto max-h-[80vh]">
             <Sidebar />
           </div>
-          <div className="col-span-full lg:col-span-6 overflow-y-auto max-h-[70vh] overflow-x-hidden p-5 border-black border-2 bg-white rounded-xl">
+          <div className="col-span-full lg:col-span-6 overflow-y-auto max-h-[80vh] overflow-x-hidden p-5 border-black border-2 bg-white rounded-xl">
             {children}
           </div>
         </div>

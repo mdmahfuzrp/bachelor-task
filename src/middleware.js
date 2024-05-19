@@ -8,13 +8,13 @@ export function middleware(request) {
   const pathname = new URL(request.url).pathname;
 
   // Protect all non-public routes (excluding "/login")
-  if (!adminToken && pathname.startsWith("/dashboard")) {
+  if (!adminToken && pathname.startsWith("/users/dashboard")) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
   // Redirect authenticated users to dashboard from "/" and "/create-account"
   if (adminToken && (pathname === "/" || pathname === "/create-account")) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+    return NextResponse.redirect(new URL("/users/dashboard", request.url));
   }
 
   return NextResponse.next();
