@@ -47,6 +47,12 @@ const DashboardNav = () => {
             height={200}
           />
         </Link>
+        <p className="hidden md:flex text-base font-medium">
+          All Task page -{" "}
+          <Link href={"/users/all-tasks"} className="text-blue-500 underline">
+            Trello task management Using Zustand
+          </Link>
+        </p>
         <div className="hidden lg:flex items-center gap-6">
           <button className="border rounded-full p-[2px]">
             <Badge count={100}>
