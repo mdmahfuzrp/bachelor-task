@@ -1,6 +1,7 @@
 "use client";
 import ErrorMessage from "@/utils/ErrorMessage";
 import LoadingSpinner from "@/utils/LoadingSpinner";
+import { setCookie } from "@/utils/cookies";
 import { message } from "antd";
 import axios from "axios";
 import Link from "next/link";
@@ -70,7 +71,8 @@ const SignIn = () => {
     try {
       const url = "http://localhost:8080/api/auth";
       const { data: res } = await axios.post(url, data);
-      localStorage.setItem("token", res.data);
+      console.log(res);
+      setCookie(process.env.NEXT_PUBLIC_ADMIN_SECRET, res?.data, 100);
       router.push("/dashboard");
     } catch (error) {
       if (

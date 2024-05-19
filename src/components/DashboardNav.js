@@ -1,50 +1,41 @@
+"use client";
 import { Button, Dropdown, Space, Avatar, Badge } from "antd";
 import React from "react";
 import { UserOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import DrawerForNav from "./DrawerForNav";
 import Link from "next/link";
-
-const items = [
-  {
-    key: "1",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        Profile
-      </a>
-    ),
-  },
-  {
-    key: "2",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.aliyun.com"
-      >
-        Settings & privacy
-      </a>
-    ),
-  },
-  {
-    key: "3",
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.luohanacademy.com"
-      >
-        New updates
-      </a>
-    ),
-  },
-];
+import { deleteCookie } from "@/utils/cookies";
+import { useRouter } from "next/navigation";
 
 const DashboardNav = () => {
+  const router = useRouter();
+  const items = [
+    {
+      key: "1",
+      label: (
+        <a target="_blank" rel="noopener noreferrer" href="">
+          Profile
+        </a>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <a target="_blank" rel="noopener noreferrer" href="">
+          Settings & privacy
+        </a>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <button type="button" onClick={() => deleteCookie(router)}>
+          Logout
+        </button>
+      ),
+    },
+  ];
   return (
     <div className="bg-white rounded-xl">
       <div className="w-full flex items-center justify-between border-2 px-5 pl-3 rounded-xl mb-3 border-black">
