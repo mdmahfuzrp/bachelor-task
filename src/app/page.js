@@ -69,7 +69,7 @@ const SignIn = () => {
 
     setLoader(true);
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = "https://bachelor-task-server.vercel.app/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log(res);
       setCookie(process.env.NEXT_PUBLIC_ADMIN_SECRET, res?.data, 100);

@@ -66,11 +66,12 @@ const CreateAccount = () => {
       email: "",
     }));
     setLoader(true);
-    try {
-      const url = "http://localhost:8080/api/users";
+    //bachelor-task-server.vercel.app/
+    https: try {
+      const url = "https://bachelor-task-server.vercel.app/api/users";
       const { data: res } = await axios.post(url, data);
       router.push("/");
-      console.log(res.message);
+      message.success("Account created successful.");
     } catch (error) {
       if (
         error.response &&
