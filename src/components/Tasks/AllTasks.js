@@ -8,7 +8,7 @@ const AllTasks = () => {
   return (
     <section
       className={`flex text-primary pb-4 bg-special border-2 border-black rounded-md px-4 ${
-        pathname === "/all-tasks" ? "" : "mt-5"
+        pathname === "/users/all-tasks" ? "" : "mt-5"
       }`}
     >
       <div className="w-full">

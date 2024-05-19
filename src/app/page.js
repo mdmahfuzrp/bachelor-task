@@ -73,7 +73,7 @@ const SignIn = () => {
       const { data: res } = await axios.post(url, data);
       console.log(res);
       setCookie(process.env.NEXT_PUBLIC_ADMIN_SECRET, res?.data, 100);
-      router.push("/dashboard");
+      router.push("/users/dashboard");
     } catch (error) {
       if (
         error.response &&
@@ -90,7 +90,7 @@ const SignIn = () => {
       {contextHolder}
       <div className="container !h-screen !flex !items-center !justify-center flex-col">
         <div className="border bg-white rounded-t-full mx-auto lg:w-10/12">
-          <Link href={"/dashboard"}>
+          <Link href={"/users/dashboard"}>
             <img
               src="/logo.png"
               alt="bachelor-task"

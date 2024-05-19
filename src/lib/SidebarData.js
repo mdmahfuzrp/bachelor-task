@@ -7,27 +7,27 @@ import { IoFileTrayStackedOutline } from "react-icons/io5";
 export const SidebarData = [
   {
     name: "Dashboard",
-    url: "/dashboard",
+    url: "/users/dashboard",
     icon: <LuLayoutDashboard />,
   },
   {
     name: "Projects",
-    url: "/projects",
+    url: "/users/projects",
     icon: <IoFileTrayStackedOutline size={17} />,
   },
   {
     name: "Manage Tasks",
-    url: "/manage-tasks",
+    url: "/users/manage-tasks",
     icon: <HiOutlineClipboardDocumentList size={20} />,
   },
   {
     name: "All Tasks",
-    url: "/all-tasks",
+    url: "/users/all-tasks",
     icon: <TbUserHexagon size={19} />,
   },
   {
     name: "Statistic",
-    url: "/statistic",
+    url: "/users/statistic",
     icon: <MdAutoGraph size={18} />,
   },
 ];

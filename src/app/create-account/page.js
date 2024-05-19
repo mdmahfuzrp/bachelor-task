@@ -87,7 +87,7 @@ const CreateAccount = () => {
       {contextHolder}
       <div className="container !h-screen !flex !items-center !justify-center flex-col">
         <div className="border bg-white rounded-t-full mx-auto lg:w-10/12">
-          <Link href={"/dashboard"}>
+          <Link href={"/users/dashboard"}>
             <img
               src="/logo.png"
               alt="bachelor-task"

@@ -39,7 +39,7 @@ const DashboardNav = () => {
   return (
     <div className="bg-white rounded-xl">
       <div className="w-full flex items-center justify-between border-2 px-5 pl-3 rounded-xl mb-3 border-black">
-        <Link href={"/dashboard"}>
+        <Link href={"/users/dashboard"}>
           <Image
             src={"/logo.png"}
             className="w-[150px] lg:w-[200px]"

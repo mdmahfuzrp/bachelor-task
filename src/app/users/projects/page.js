@@ -35,7 +35,7 @@ const Projects = () => {
           <h1 className="sm:text-[18px] flex flex-col gap-1 sm:flex-row items-center justify-between uppercase py-[2px] bg-special border-2 border-black px-2 rounded-md mb-3 font-medium  text-primary">
             All projects
             <Link
-              href="/projects/add-project"
+              href="/users/projects/add-project"
               className="text-[12px] font-medium hover:bg-green-300 duration-150 bg-c_green py-[2px] px-[0px] w-full max-w-[120px] mb-[1px] rounded-full shadow-md border-black border text-center"
             >
               Add a project

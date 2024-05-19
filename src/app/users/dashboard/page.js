@@ -54,7 +54,7 @@ const Dashboard = () => {
       <div className="flex flex-col items-center justify-center mt-5 mb-4 border-2 border-black py-5 rounded-md">
         <Image src={"/add-project.png"} width={80} className="" height={80} />
         <Link
-          href="/projects/add-project"
+          href="/users/projects/add-project"
           className="text-[16px] font-medium hover:bg-green-300 duration-150 bg-c_green py-1 px-5 w-full max-w-[200px] mt-4 rounded-full shadow-md border-black border text-center"
         >
           Add a project
