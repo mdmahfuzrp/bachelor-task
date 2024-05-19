@@ -5,12 +5,12 @@ import { message } from "antd";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 
-const SignIn = () => {
+const CreateAccount = () => {
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -65,13 +65,12 @@ const SignIn = () => {
       password: "",
       email: "",
     }));
-
     setLoader(true);
     try {
-      const url = "http://localhost:8080/api/auth";
+      const url = "http://localhost:8080/api/users";
       const { data: res } = await axios.post(url, data);
-      localStorage.setItem("token", res.data);
-      router.push("/dashboard");
+      router.push("/");
+      console.log(res.message);
     } catch (error) {
       if (
         error.response &&
@@ -96,16 +95,30 @@ const SignIn = () => {
             />
           </Link>
         </div>
-        <div className="lg:w-10/12 relative pb-14 py-10 px-10 rounded-b-lg bg-light50 border  mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="lg:w-10/12 relative pb-14 py-5 px-10 rounded-b-lg bg-light50 border  mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className=" md:max-w-[350px] w-full"
           >
             <div className=" w-full md:max-w-[480px]">
-              <h1 className="text-[20px] text-primary md:text-[22px] font-semibold mb-7">
+              <h1 className="text-[20px] text-primary md:text-[22px] font-semibold mb-5">
                 JWT Authentication! <br /> We appreciate your privacy.
               </h1>
-              <p className="text-primary">Email</p>
+              <p className="text-primary">First Name</p>
+              <input
+                {...register("firstName", { required: true })}
+                placeholder="First Name"
+                className="border text-secondary outline-none  px-4 w-full py-[10px] mt-1 rounded-md"
+              />
+
+              <p className="text-primary mt-2">Last Name</p>
+              <input
+                {...register("lastName", { required: true })}
+                placeholder="Last Name"
+                className="border text-secondary outline-none  px-4 w-full py-[10px] mt-1 rounded-md"
+              />
+
+              <p className="text-primary mt-2">Email</p>
               <input
                 {...register("email", { required: true })}
                 placeholder="Email address"
@@ -118,7 +131,7 @@ const SignIn = () => {
                 <ErrorMessage message={customErr?.email} />
               )}
             </div>
-            <div className=" w-full mt-5">
+            <div className=" w-full mt-2">
               <p className="text-primary">Password</p>
               <div className="relative">
                 <input
@@ -164,10 +177,10 @@ const SignIn = () => {
             />
           </div>
 
-          <span className="text-[15px] text-secondary absolute bottom-10 text-center">
-            If you are new here !{" "}
-            <Link href={"/create-account"} className="text-blue-500 underline">
-              Create Account.
+          <span className="text-[15px] text-secondary absolute bottom-6 text-center">
+            Already have an account ?{" "}
+            <Link href={"/"} className="text-blue-500 underline">
+              Login here.
             </Link>
           </span>
         </div>
@@ -176,4 +189,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default CreateAccount;
