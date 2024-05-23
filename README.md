@@ -6,7 +6,7 @@
 
 Bachelor Task is a project management website built using React, Zustand, React Query, Ant Design, Next.js, and Tailwind CSS. It provides a platform for managing projects and tasks efficiently.
 
-### Live Demo [Live Demo](https://bachelor-task.vercel.app/)
+### Live Demo [Live Demo](https://bachelor-task-again.vercel.app/)
 ### Backend Repo [Repository Link](https://github.com/mdmahfuzrp/bachelor-task-server)
 
 ### Ui Design [Live Demo](https://excalidraw.com/#json=qIgvNWBrvef3pX9PLGNjs,aNEBuTJmD5mE4yUr5ts59Q)
